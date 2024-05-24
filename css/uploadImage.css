@@ -1,0 +1,39 @@
+body, html {
+    height: 100vh;
+    overflow: hidden;
+
+    --icon_clr: black;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+}
+
+form {
+    display: none;
+}
+
+#upload {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+}
+
+img {
+    height: 90vh;
+}
+
+#upload:hover {
+    --icon_clr: green;
+}
+
+#upload svg, #upload path {
+    width: 3em;   
+    height: 3em;
+    fill: var(--icon_clr);
+}

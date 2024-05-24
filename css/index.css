@@ -1,0 +1,184 @@
+@import url(/css/fonts.css);
+@import url(/css/buttons.css);
+
+:root {
+    --bg: rgba(231, 155, 62, 0.2);
+    --surface: rgba(230, 140, 5, 0.562);
+}
+
+*, *::backdrop, *::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.search-hero {
+    width: 100%;
+    height: 20vh;
+    background-image: url(/img/frontpage.jpg);
+    background-position: center;
+    background-size: cover;
+    filter: opacity(.5);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-box {
+    width: 45%;
+    background-color: white;
+    backdrop-filter: opacity(.5);
+    padding: .5em;
+
+    gap: .75em;
+    border-radius: .4em;
+
+    display: flex;
+    align-items: center;
+}
+
+.search-box > input[type=search] {
+    width: 100%;
+    height: 2em;
+    border: none;
+    font-size: 1em;
+}
+
+.categories {
+    padding: 1em;
+    text-align: center;
+
+}
+
+.categories > .list {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 2em;
+
+}
+
+.categories > .list * {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 1.5em;
+}
+
+.fynd {
+    width: 100%;
+    background-color: var(--bg);
+    padding: 2em;
+}
+
+.fynd > .top {
+    text-align: center;
+    font-size: 4em;
+}
+
+.mini-annons {
+    height: 10em;
+    width: 45%;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--surface);
+    overflow: hidden;
+    padding: 1em;
+    border-radius: .55em;
+}
+
+.mini-annons > .info {
+    max-width: 50%;
+}
+
+.mini-annons > .img {
+    background-image: url(/img/stol.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 100%;
+    border-radius: 2em;
+}
+
+.fynd > .container {
+    margin-top: 1.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+    width: 100%;
+}
+
+.fynd > .container > .list {
+    margin-top: .5em;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mini-annons  a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: white;
+}
+
+.header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+}
+
+#logo {
+      width: 28%;
+}
+
+#header-menu {
+      display: flex;
+      width: 50%;
+      justify-content: space-between;
+      flex-flow: wrap;
+      width: 61%;
+}
+
+#header-menu>a {
+      padding: 1%;
+      text-decoration: none;
+      color: rgb(19, 16, 16);
+}
+
+#loginbutton {
+      background-color: rgba(230, 140, 5, 0.562);
+      border-radius: 10px;
+      color: rgb(255, 253, 250) !important;
+      padding: 5%;
+}
+
+.stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+/* start av klasser för felrutor */
+.infobox {
+    width: 100%;
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    padding: .5em;
+}
+
+.infobox h1 {
+    font-size: .5em;
+}
+
+.infobox p {
+    font-size: .8em;
+}
+
+.infobox-error {
+    background-color: rgba(255, 0, 0, 0.332);
+    border: 1px solid red;
+}

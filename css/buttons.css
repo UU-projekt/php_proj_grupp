@@ -1,0 +1,21 @@
+.btn {
+    background-color: transparent;
+    border: none;
+    font-size: 1em;
+    padding: 1em;
+    transition: .4s;
+}
+
+.btn-surface {
+    background-color: var(--surface);
+    color: white;
+}
+
+.btn-fullwide {
+    width: 100%;
+}
+
+.btn.disabled {
+    filter: grayscale(0.4);
+    cursor: not-allowed;
+}

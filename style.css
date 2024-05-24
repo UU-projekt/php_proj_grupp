@@ -1,0 +1,165 @@
+/* HEADER */
+
+.header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: white;
+}
+
+.header>a {
+      text-decoration: none;
+}
+
+.header>a>#logotext {
+      font-family: Garamond, serif;
+      color: rgb(255, 127, 39);
+      font-weight: bold;
+      width: 30%;
+}
+
+#logotext>h2 {
+      font-size: 1.2em;
+}
+
+/* Header menu list */
+#header-menu {
+      list-style-type: none;
+      display: flex;
+      justify-content: space-between;
+      width: 61%;
+      flex-wrap: wrap;
+
+      a {
+            text-decoration: none;
+            color: black;
+      }
+}
+
+.menu-item {
+      padding: 5px;
+      cursor: pointer;
+      text-decoration: none;
+}
+
+.menu-item:hover {
+      #categories-drop-down-menu>.drop-down-item {
+            display: block;
+      }
+}
+
+#categories-drop-down-menu {
+      position: absolute;
+      background-color: antiquewhite;
+      padding: 0px;
+
+      .drop-down-item {
+            display: none;
+            border: 1px solid rgb(226, 119, 43);
+            padding: 4px;
+      }
+}
+
+#loginbutton {
+      background-color: rgb(255, 127, 39);
+      border-radius: 10px;
+      padding: 2%;
+}
+
+#loginbutton>a {
+      color: rgb(255, 253, 250);
+}
+
+/* Jonathans kod:
+#header-menu {
+      display: flex;
+      width: 50%;
+      justify-content: space-between;
+      flex-flow: wrap;
+      width: 61%;
+
+      a {
+            padding: 1%;
+            text-decoration: none;
+            color: rgb(19, 16, 16);
+      }
+}
+
+#header-menu {
+      display: flex;
+      width: 50%;
+      justify-content: space-between;
+      flex-flow: wrap;
+      width: 61%;
+}
+
+#header-menu>a {
+      padding: 1%;
+      text-decoration: none;
+      color: rgb(19, 16, 16);
+}
+
+#categories-btn {
+      cursor: pointer;
+}
+
+
+#categories-content {
+      display: none;
+      background-color: #fff;
+      padding: 10px;
+      border: 1px solid #ccc;
+      width: 150px;
+  }
+
+
+#loginbutton {
+      background-color: rgba(230, 140, 5, 0.562);
+      border-radius: 10px;
+      color: rgb(255, 253, 250) !important;
+      padding: 5%;
+}
+*/
+
+
+/*
+
+#logo {
+      width: 28%;
+}
+
+#logo {
+      width: 28%;
+}
+*/
+
+
+/* MAIN */
+
+.main {
+      background-color: rgba(231, 155, 62, 0.2);
+      width: 85%;
+      margin: auto;
+}
+
+.productbox {
+      margin: auto;
+      background-color: rgb(242 183 144 / 84%);
+      padding: 5px;
+      border: 1px solid rgb(134 89 60 / 84%);
+}
+
+.center>* {
+      position: absolute;
+      width: 25vw;
+      height: 81%;
+      background-color: #ffe6cf;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 2%;
+      padding-top: 0%;
+      display: flex;
+      font-size: 150%;
+      margin-top: 2%;
+}

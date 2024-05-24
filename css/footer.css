@@ -1,0 +1,27 @@
+#footer-container {
+      background-color: rgba(230, 140, 5, 0.562);
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 2%;
+}
+
+#footer-img {
+      width: 25%;
+}
+
+.footer-item {
+      text-align: center;
+      display: block;
+
+      a {
+            display: block;
+            text-decoration: none;
+      }
+}
+
+#footer-below {
+      background-color: rgba(230, 140, 5, 0.562);
+      text-align: center;
+      padding-bottom:2%;
+}
