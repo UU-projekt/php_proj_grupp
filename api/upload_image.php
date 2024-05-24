@@ -20,4 +20,4 @@ if(filesize($img_temp) > 32_000_000) {
 
 $res = uploadImage(file_get_contents($img_temp));
 
-echo redirect("/uploadImage.php?url=" . $res["data"]["url"]);
+echo redirect( resolveDir("/uploadImage.php?url=" . $res["data"]["url"], "/") );

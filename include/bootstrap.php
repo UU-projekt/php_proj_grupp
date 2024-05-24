@@ -38,9 +38,9 @@ function resolveDir($file, $dirs = "/include/lib/") {
     return $root . $dirs . $file;
 };
 
-include_once resolveDir("status.php");
-include_once resolveDir("icons.php");
-include_once resolveDir("db.php");
-include_once resolveDir("currency.php");
-include_once resolveDir("map.php");
-include_once resolveDir("uploadImage.php");
+include resolveDir("status.php");
+include resolveDir("icons.php");
+include resolveDir("db.php");
+include resolveDir("currency.php");
+include resolveDir("map.php");
+include resolveDir("uploadImage.php");

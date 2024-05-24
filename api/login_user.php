@@ -23,7 +23,7 @@ $password = $_POST["password"];
 
 if(strlen($password) < 5) {
     setStatus("error", "validering: lösenord", "ditt lösenord är för kort");
-    redirect("/login.php");
+    redirect( "login.php" );
     die();
 }
 
@@ -31,7 +31,7 @@ $user = getUser($email);
 
 if(empty($user)) {
     setStatus("error", "inget konto", "hittade inget konto med detta email");
-    redirect("/login.php");
+    redirect( "login.php" );
     die();
 }
 
@@ -44,6 +44,6 @@ if(password_verify($password, $hash)) {
     die();
 } else {
     setStatus("error", "fel lösenord", "lösenordet var inte korrekt");
-    redirect("/login.php");
+    redirect( "login.php" );
     die();
 }

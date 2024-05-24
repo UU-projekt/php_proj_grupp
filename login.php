@@ -1,5 +1,7 @@
 <?php 
 
+include "./include/bootstrap.php";
+
 $email = "";
 $afterAuth = "";
 

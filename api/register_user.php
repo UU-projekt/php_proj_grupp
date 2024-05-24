@@ -14,19 +14,19 @@ $username = $_POST["username"];
 
 if(strlen($password) < 5) {
     setStatus("error", "validering: lösenord", "ditt lösenord är för kort");
-    redirect("/register.php");
+    redirect( "/register.php" );
     die();
 }
 
 if(strlen($username) < 5) {
     setStatus("error", "validering: användarnamn", "ditt användarnamn är för kort");
-    redirect("/register.php");
+    redirect( "/register.php" );
     die();
 }
 
 if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     setStatus("error", "validering: email", "din email är felformaterad");
-    redirect("/register.php");
+    redirect( "/register.php" );
     die();
 }
 
@@ -34,7 +34,7 @@ try {
     createUser($email, $username, password_hash($password, null));
     redirect("/login.php?email=" . $email);
 } catch(Exception $e) {
-    setStatus("error", "fel", "epost-addressen är redan tagen");
-    redirect("/register.php");
+    setStatus("error", "fel", "epost-addressen är redan tagen <small>(" . $e->getMessage() . ")</small>");
+    redirect( "/register.php" );
     die();
 }
