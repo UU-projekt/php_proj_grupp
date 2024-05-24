@@ -11,7 +11,7 @@ $notices = getNotices();
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="css/footer.css">
 </head>
-<body class="inter-500">
+<body class="inter-500"> 
     <div class="header">
         <img src="logo.png" alt="logo-image" id="logo">
         <div id="header-menu">
