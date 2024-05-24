@@ -21,10 +21,10 @@ if(isset($_GET["afterAuth"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/css/index.css">
-    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/login.css">
 
-    <script src="/js/validate.js" defer></script>
+    <script src="js/validate.js" defer></script>
 </head>
 <body class="inter-500">
     <div class="header">
@@ -62,7 +62,7 @@ if(isset($_GET["afterAuth"])) {
                 <?php endif ?>
                 <input id="login-btn" class="btn btn-fullwide btn-surface disabled" type="submit" value="logga in" disabled/>
             </form>
-            <small>Har du inget konto? <a href="/register.php">Skapa ett!</a></small>
+            <small>Har du inget konto? <a href="register.php">Skapa ett!</a></small>
         </div>
     </div>
     

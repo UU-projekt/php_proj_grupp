@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/css/index.css">
-    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/login.css">
 
-    <script src="/js/validate.js" defer></script>
+    <script src="js/validate.js" defer></script>
 </head>
 <body class="inter-500">
     <div class="header">
@@ -25,7 +25,7 @@
         <div class="login stack">
             <?php include "./include/views/_info-box.php" ?>
             <h1>Nytt konto</h1>
-            <form onchange="validateRegister()" class="stack" method="POST" action="/api/register_user.php">
+            <form onchange="validateRegister()" class="stack" method="POST" action="api/register_user.php">
                 <div>
                     <label>Användarnamn:</label>
                     <div class="input">
@@ -50,7 +50,7 @@
 
                 <input id="login-btn" class="btn btn-fullwide btn-surface disabled" type="submit" value="skapa konto" disabled/>
             </form>
-            <small>Har du redan ett konto? <a href="/login.php">Logga in!</a></small>
+            <small>Har du redan ett konto? <a href="login.php">Logga in!</a></small>
         </div>
     </div>
     

@@ -3,7 +3,7 @@ include "../include/bootstrap.php";
 
 if(!isset($_POST["email"]) || !isset($_POST["password"]) || !isset($_POST["username"])) {
     setStatus("error", "validering: fält", "obligatoriska fält saknas");
-    redirect("/login.php");
+    redirect("../login.php");
     die();
 }
 
