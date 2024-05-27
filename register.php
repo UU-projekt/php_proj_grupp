@@ -23,7 +23,6 @@
 
     <div class="login-container">
         <div class="login stack">
-            <?php include "./include/views/_info-box.php" ?>
             <h1>Nytt konto</h1>
             <form onchange="validateRegister()" class="stack" method="POST" action="api/register_user.php">
                 <div>

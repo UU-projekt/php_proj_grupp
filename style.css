@@ -185,3 +185,18 @@
     justify-content: space-around;    
     width: 100%;
 }
+
+#product_container {
+      display: flex;
+      
+}
+
+.img-container {
+      width: 48%;
+      padding: 2%;
+}
+
+#right-content {
+      width: 48%;
+      padding: 2%;
+}

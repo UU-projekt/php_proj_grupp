@@ -65,26 +65,37 @@
                   $category_id = $_GET['category_id'];
                   $db = new SQLite3("../db/database.db");
 
+                  $getcategorystmt = $db->prepare('SELECT category_name FROM category WHERE category_id = :category_id');
+                  $getcategorystmt->bindValue(':category_id', $category_id, SQLITE3_INTEGER);
+                  $categoryresult = $getcategorystmt->execute();
+                  $categoryrow = $categoryresult->fetchArray();
+                  echo '<h1>' . $categoryrow['category_name'] .'</h1>';
+
                   $stmt = $db->prepare('SELECT * 
                                           FROM ad 
                                           JOIN category ON ad.category_id = category.category_id
                                           WHERE category.category_id = :category_id');
 
                   $stmt->bindValue(':category_id', $category_id, SQLITE3_INTEGER);
-
                   $result = $stmt->execute();
 
                   while ($row = $result->fetchArray()) {
-                        echo '<div class="feed-box">' 
+                        $product_id = $row['ad_id'];
+                        $product_img = $row['img_url'];
+                        echo '<a href="../product-page.php?product_id=' . $product_id . '">
+                        <div class="feed-box">' 
                         . '<div class="title-container">' 
                              . $row['title'] 
                         . '</div> ' 
                         . '<div class="img-and-description-container">'
-                              . '<div class="img-container">image</div>'
+                              . '<div class="img-container"><img src="' . $product_img .'"></div>'
                               . '<p class="description">' . $row['description'] . '</p>'
                         . '</div><br>
-                        </div>';
+                        </div>
+                        </a>';
                   }
+
+                  $db->close();
 
                   ?>
             </div>
