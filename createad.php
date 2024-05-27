@@ -14,11 +14,14 @@ if(!isset($_SESSION["user"]) || !in_array($_SESSION["user"]["role"], array("Sell
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Skapa annons</title>
+          
+            <link rel="stylesheet" href="css/index.css">
+            <link rel="stylesheet" href="css/footer.css">
+            <link rel="stylesheet" href="css/index.css">
             <link rel="stylesheet" href="style.css">
-            <link rel="stylesheet" href="css/buttons.css">
       </head>
 
-      <body>
+      <body class="inter-500">
             <?php include "header.php"; ?>
 
             <div class="center">
@@ -48,7 +51,7 @@ if(!isset($_SESSION["user"]) || !in_array($_SESSION["user"]["role"], array("Sell
                               <input type="hidden" name="img_url" id="bild" />
                               <iframe src="./uploadImage.php">
                                     iframe funkar inte. L
-                              </iframe>
+                              </iframe> </br>
 
                               <label for="adress">Stad:</label>
                               <input type="text" name="city" id="adress" placeholder="Vart finns din vara?"><br>
@@ -59,7 +62,6 @@ if(!isset($_SESSION["user"]) || !in_array($_SESSION["user"]["role"], array("Sell
             </div>
 
       </body>
-      <script src="js/toast.js"> </script>
       <script>
 
             function onImgUpload(img) {

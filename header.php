@@ -19,12 +19,11 @@ echo
                   <a href="createad.php">Skapa annons</a>
             </li>
             <li class="menu-item">
-                  <a href="news.php">Nyheter</a>
+                  <a href="anslag.php">Anslag</a>
             </li>';
 
             include "drop-down-categories.php";
 
-            
             echo $btn . '
       </ul>
 </div>';
