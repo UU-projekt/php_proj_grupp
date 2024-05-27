@@ -1,4 +1,11 @@
 <?php 
+$btn = '<li class="menu-item" id="loginbutton"> <a href="login.php">Logga in</a>  </li>';
+
+if(isset($_SESSION["user"])) {
+      // Dålig praxis att ha logga ut som en GET då vissa browsers kör prefetch men idc
+      $btn = '<li class="menu-item" id="loginbutton"> <a href="logout.php">Logga Ut</a>  </li>';
+}
+
 echo 
 '<div class="header">
       <a href="index.php">
@@ -17,9 +24,8 @@ echo
 
             include "drop-down-categories.php";
 
-            echo '<li class="menu-item" id="loginbutton">
-                  <a href="login.php">Logga in</a>
-            </li>
+            
+            echo $btn . '
       </ul>
 </div>';
 ?>
