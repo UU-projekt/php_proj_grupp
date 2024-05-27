@@ -1,7 +1,7 @@
 <?php
 include "./include/bootstrap.php";
 
-if(!isset($_SESSION["user"]) || in_array($_SESSION["user"]["role"], array("Seller", "Admin")) ) {
+if(!isset($_SESSION["user"]) || !in_array($_SESSION["user"]["role"], array("Seller", "Admin")) ) {
       redirect("./index.php");
 }
   
@@ -41,8 +41,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $userresult = $statement->execute();
       */
 
-      $sql = "INSERT INTO ad (category_id, title, description, price, location_id, upload_date) 
-      VALUES (:category_id, :title, :description, :price, :location_id, :upload_date)";
+      $sql = "INSERT INTO ad (category_id, title, description, price, location_id, upload_date, img_url) 
+      VALUES (:category_id, :title, :description, :price, :location_id, :upload_date, :img_url)";
       $statement = $db->prepare($sql);
 
       $upload_date = date('Y-m-d H:i');
@@ -53,6 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $statement->bindParam(':price', $_POST['price'], SQLITE3_TEXT);
       $statement->bindParam(':location_id', $locationrow['location_id'], SQLITE3_INTEGER);
       $statement->bindParam(':upload_date', $upload_date, SQLITE3_TEXT);
+      $statement->bindParam("img_url", $_POST["img_url"]);
 
       if ($statement->execute()) {
             echo 'HEJ HEJ HEJH JHJHJHHJHJHJHJHJHJJH';

@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upload image</title>
-    <link rel="stylesheet" href="/css/index.css">
-    <link rel="stylesheet" href="/css/uploadImage.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/uploadImage.css">
 </head>
 <body>
 
@@ -17,7 +17,7 @@
         <?php include "./include/views/_info-box.php" ?>
         <?= getIconElement("upload") ?>
     </div>
-    <form onchange="beforeSubmit()" method="POST" action="/api/upload_image.php" enctype="multipart/form-data">
+    <form onchange="beforeSubmit()" method="POST" action="api/upload_image.php" enctype="multipart/form-data">
         <input accept="image/png, image/jpeg" type="file" name="image_file" />
         <input type="hidden" name="image" id="image" />
     </form>

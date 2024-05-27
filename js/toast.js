@@ -1,6 +1,12 @@
 function createToastParent() {
     const element = document.createElement("div")
     element.id = "toast"
+
+    const styleElem = document.createElement("link")
+    styleElem.rel = "stylesheet"
+    styleElem.href = "css/toast/index.css"
+
+    document.head.append(styleElem)
     
     return element
 }

@@ -1,7 +1,7 @@
 <?php 
 include "./include/bootstrap.php";
 
-if(!isset($_SESSION["user"]) || in_array($_SESSION["user"]["role"], array("Seller", "Admin"))) {
+if(!isset($_SESSION["user"]) || !in_array($_SESSION["user"]["role"], array("Seller", "Admin"))) {
     redirect("./index.php");
 }
 
@@ -45,7 +45,7 @@ if(!isset($_SESSION["user"]) || in_array($_SESSION["user"]["role"], array("Selle
                               </select>
 
                               <label for="bild">Lägg till en bild:</label>
-                              <input type="image" name="img_url" id="bild"><br>
+                              <input type="hidden" name="img_url" id="bild" />
                               <iframe src="./uploadImage.php">
                                     iframe funkar inte. L
                               </iframe>
@@ -59,5 +59,13 @@ if(!isset($_SESSION["user"]) || in_array($_SESSION["user"]["role"], array("Selle
             </div>
 
       </body>
+      <script src="js/toast.js"> </script>
+      <script>
+
+            function onImgUpload(img) {
+                  console.log("img", img)
+                  document.getElementById("bild").value = img
+            }
+      </script>
 
       </html>
