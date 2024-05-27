@@ -1,7 +1,7 @@
 <?php
 include "./include/bootstrap.php";
 
-if(!isset($_SESSION["user"]) || $_SESSION["user"]["role"] != "Seller" ) {
+if(!isset($_SESSION["user"]) || in_array($_SESSION["user"]["role"], array("Seller", "Admin")) ) {
       redirect("./index.php");
 }
   

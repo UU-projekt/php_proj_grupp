@@ -1,7 +1,7 @@
 <?php 
 include "./include/bootstrap.php";
 
-if(!isset($_SESSION["user"]) || $_SESSION["user"]["role"] != "Seller" ) {
+if(!isset($_SESSION["user"]) || in_array($_SESSION["user"]["role"], array("Seller", "Admin"))) {
     redirect("./index.php");
 }
 
@@ -46,6 +46,9 @@ if(!isset($_SESSION["user"]) || $_SESSION["user"]["role"] != "Seller" ) {
 
                               <label for="bild">Lägg till en bild:</label>
                               <input type="image" name="img_url" id="bild"><br>
+                              <iframe src="./uploadImage.php">
+                                    iframe funkar inte. L
+                              </iframe>
 
                               <label for="adress">Stad:</label>
                               <input type="text" name="city" id="adress" placeholder="Vart finns din vara?"><br>
