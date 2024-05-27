@@ -41,7 +41,7 @@ if(isset($_GET["afterAuth"])) {
         <div class="login stack">
             <?php include "./include/views/_info-box.php" ?>
             <h1>Login</h1>
-            <form onchange="validateLogin()" class="stack" method="POST" action="/api/login_user.php">
+            <form onchange="validateLogin()" class="stack" method="POST" action="api/login_user.php">
                 <div>
                     <label>Email:</label>
                     <div class="input">

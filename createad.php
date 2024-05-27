@@ -1,4 +1,11 @@
-<div?php session_start(); ?>
+<?php 
+include "./include/bootstrap.php";
+
+if(!isset($_SESSION["user"]) || $_SESSION["user"]["role"] != "Seller" ) {
+    redirect("./index.php");
+}
+
+?>
 
       <!DOCTYPE html>
       <html lang="en">

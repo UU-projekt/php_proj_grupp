@@ -1,4 +1,11 @@
 <?php
+include "./include/bootstrap.php";
+
+if(!isset($_SESSION["user"]) || $_SESSION["user"]["role"] != "Seller" ) {
+      redirect("./index.php");
+}
+  
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
       $db = new SQLite3("db/database.db");
