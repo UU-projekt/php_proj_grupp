@@ -31,10 +31,10 @@
       flex-wrap: wrap;
       z-index: 2;
 
-      a {
-            text-decoration: none;
-            color: black;
-      }
+}
+a {
+      text-decoration: none;
+      color: black;
 }
 
 .menu-item {
@@ -44,10 +44,8 @@
       z-index: 2;
 }
 
-.menu-item:hover {
-      #categories-drop-down-menu>.drop-down-item {
-            display: block;
-      }
+.menu-item:hover #categories-drop-down-menu>.drop-down-item {
+      display: block;
 }
 
 #categories-drop-down-menu {
@@ -55,11 +53,12 @@
       background-color: antiquewhite;
       padding: 0px;
 
-      .drop-down-item {
-            display: none;
-            border: 1px solid rgb(226, 119, 43);
-            padding: 4px;
-      }
+}
+
+.drop-down-item {
+      display: none;
+      border: 1px solid rgb(226, 119, 43);
+      padding: 4px;
 }
 
 #loginbutton {

@@ -24,7 +24,7 @@
                   . '" OR title + description LIKE "' . $searchinput  . '")';
 
                   $result = $db->query($sql);
-                  echo 'Sökresultat på ' . $_GET['searchinput'] . ':<br>';
+                  echo 'Sökresultat på ' . strip_tags($_GET['searchinput']) . ':<br>';
 
                   while ($row = $result->fetchArray()) {
                         echo '<div class="productbox">';

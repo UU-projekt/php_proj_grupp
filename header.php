@@ -24,7 +24,6 @@ echo
 
             include "drop-down-categories.php";
 
-            
             echo $btn . '
       </ul>
 </div>';

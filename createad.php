@@ -17,10 +17,11 @@ if(!isset($_SESSION["user"]) || !in_array($_SESSION["user"]["role"], array("Sell
           
             <link rel="stylesheet" href="css/index.css">
             <link rel="stylesheet" href="css/footer.css">
+            <link rel="stylesheet" href="css/index.css">
             <link rel="stylesheet" href="style.css">
       </head>
 
-      <body>
+      <body class="inter-500">
             <?php include "header.php"; ?>
 
             <div class="center">
