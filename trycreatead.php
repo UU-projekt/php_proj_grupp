@@ -41,8 +41,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $userresult = $statement->execute();
       */
 
-      $sql = "INSERT INTO ad (category_id, title, description, price, location_id, upload_date, img_url) 
-      VALUES (:category_id, :title, :description, :price, :location_id, :upload_date, :img_url)";
+      $sql = "INSERT INTO ad (category_id, title, description, price, location_id, upload_date, img_url, user_id) 
+      VALUES (:category_id, :title, :description, :price, :location_id, :upload_date, :img_url, :user_id)";
       $statement = $db->prepare($sql);
 
       $upload_date = date('Y-m-d H:i');
@@ -53,7 +53,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $statement->bindParam(':price', $_POST['price'], SQLITE3_TEXT);
       $statement->bindParam(':location_id', $locationrow['location_id'], SQLITE3_INTEGER);
       $statement->bindParam(':upload_date', $upload_date, SQLITE3_TEXT);
-      $statement->bindParam("img_url", $_POST["img_url"]);
+      $statement->bindParam(":img_url", $_POST["img_url"]);
+      $statement->bindParam(":user_id", $_SESSION["user"]["user_id"]);
 
       if ($statement->execute()) {
             echo 'HEJ HEJ HEJH JHJHJHHJHJHJHJHJHJJH';
