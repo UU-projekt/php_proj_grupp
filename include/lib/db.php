@@ -1,6 +1,8 @@
 <?php
 
 function connect() {
+   // echo "DB: " . resolveDir("database.db", "/db/");
+    //die();
     $con = new PDO("sqlite:" . resolveDir("database.db", "/db/"));
 
     return $con;

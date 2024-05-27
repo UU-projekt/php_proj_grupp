@@ -35,14 +35,14 @@
 
         const getScrElement = () => {
             const tag = document.createElement("script")
-            tag.src = "/js/toast.js"
+            tag.src = "js/toast.js"
             return tag
         }
 
         const getStyleElement = () => {
             const tag = document.createElement("link")
             tag.rel = "stylesheet"
-            tag.href = "/css/toast/index.css"
+            tag.href = "css/toast/index.css"
             return tag
         }
 

@@ -189,12 +189,12 @@
     left: 0;
     height: 100%;
     width: 100%;
-    content: "e";
 }
 
 .anslagText {
     font-size: 3em;
     z-index: 2;
+    color: white;
 }
 
 .anslagList {

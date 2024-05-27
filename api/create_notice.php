@@ -28,9 +28,9 @@ if($ttxt > 500 || $ttxt < 10) {
 
 try {
     createNotice($title, $text);
-    redirect("/anslag.php");
+    redirect("../anslag.php");
 } catch(Exception $e) {
     setStatus("error", "OOPSIE POOPSIE", $e->getMessage());
-    redirect("/post_notice.php");
+    redirect("../post_notice.php");
     die();
 }
