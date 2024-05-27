@@ -29,6 +29,7 @@
       justify-content: space-between;
       width: 61%;
       flex-wrap: wrap;
+      z-index: 2;
 
       a {
             text-decoration: none;
@@ -40,6 +41,7 @@
       padding: 5px;
       cursor: pointer;
       text-decoration: none;
+      z-index: 2;
 }
 
 .menu-item:hover {
@@ -162,4 +164,24 @@
       display: flex;
       font-size: 150%;
       margin-top: 2%;
+}
+
+.feed-box {
+      height: 20vh;
+      border-radius: 10px;
+      margin: auto;
+      background-color: rgb(242 183 144 / 84%);
+      padding: 5px;
+      border: 1px solid rgb(134 89 60 / 84%);
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 5%;
+      margin-top: 4%;
+}
+
+.img-and-description-container {
+    display: inline-flex;
+    justify-content: space-around;    
+    width: 100%;
 }
