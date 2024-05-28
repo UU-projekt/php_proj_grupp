@@ -92,6 +92,7 @@
                               . '<div class="img-container"><img src="' . $product_img .'"></div>'
                               . '<p class="description">' . $row['description'] . '</p>'
                         . '</div><br>
+                          <b>' . $row["price"] . 'kr</b>
                         </div>
                         </a>';
                   }

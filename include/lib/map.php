@@ -30,6 +30,7 @@ function _generateMap($url, $id = "map") {
     $str .= "<iframe id=\"" . $id . "\" style=\"border:0; height: 450px; width: 100%;\" allowfullscreen=\"\" loading=\"lazy\" src=\"" . $url . "\">";
     $str .= "your browser does not support iframes";
     $str .= "</iframe>";
+    
     return $str;
 }
 
@@ -52,7 +53,7 @@ function generateDynamicMap($to) {
 
         $url = _genDirectionsMapUrl($lat . "," . $lon, $to);
     } else {
-        echo "<script src=\"/js/dynamicMap.js\"> </script>";
+        echo "<script src=\"js/dynamicMap.js\"> </script>";
     }
     
     return _generateMap($url, "dynmapIframe");

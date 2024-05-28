@@ -58,3 +58,15 @@ function getNotices() {
 
     return $stmt->fetchAll();
 }
+
+function getNewAds($lim = 2) {
+    $sql = "SELECT * FROM ad
+    JOIN location ON location.location_id = ad.location_id 
+    ORDER BY ad.ad_id DESC LIMIT :lim";
+    $c = connect();
+    $stmt = $c->prepare($sql);
+    $stmt->bindParam(":lim", $lim);
+
+    $stmt->execute();
+    return $stmt->fetchAll();
+}
