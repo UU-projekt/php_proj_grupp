@@ -9,7 +9,7 @@
 // Om windows:
 //      spara filen i %temp% mappen
 
-$PATH = (PHP_OS_FAMILY == "Linux" ? ( file_exists("/dev/shm/") ? "/dev/shm/" : "/tmp/" ) : "%temp%/") . "php_proj_curr.tmp";
+$PATH = (PHP_OS_FAMILY == "Linux" ? ( file_exists("/dev/shm/") ? "/dev/shm/" : "/tmp/" ) : "./") . "php_proj_curr.tmp";
 
 // Denna funktion ser till att vi lagrar den "Nyaste" informationen från APIn i minnet istället för att hämta den varje gång.
 // Detta kanske inte är superviktigt för oss men den ser till att vi inte överstiger 1.5k requests till APIn vilket är våran gräns.
