@@ -26,7 +26,8 @@
                         $db = new SQLite3("db/database.db");
 
                         $stmt = $db->prepare('SELECT * FROM ad
-                                          JOIN location ON location.location_id = ad.location_id 
+                                          JOIN location ON location.location_id = ad.location_id
+                                          JOIN user ON user.user_id = ad.user_id 
                                           WHERE ad_id = :product_id');
 
                         $stmt->bindValue(':product_id', $product_id, SQLITE3_INTEGER);
@@ -62,7 +63,8 @@
   <option value="EUR">EUR</option>
   <option value="GBP">GBP</option>
 </select>
-                                          <p class="description">' . $row["description"] . '</p>
+                                          <p class="description">' . $row["description"] . '</p> <br /><br />
+                                          <a class="btn btn-surface" href="mailto:' . $row["email"] . '?subject=' . "Svar på din annons '" . $row["title"] . "' (Lilla Vardagsrummet)" .'"> Besvara annons </a>
                                     </div>
                               </div><br>';
 
