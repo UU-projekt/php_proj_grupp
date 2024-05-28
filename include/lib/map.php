@@ -26,19 +26,21 @@ function _genDirectionsMapUrl($from, $to) {
 }
 
 function _generateMap($url, $id = "map") {
-    echo "<iframe id=\"" . $id . "\" style=\"border:0; height: 450px; width: 100%;\" allowfullscreen=\"\" loading=\"lazy\" src=\"" . $url . "\">";
-    echo "your browser does not support iframes";
-    echo "</iframe>";
+    $str = "";
+    $str .= "<iframe id=\"" . $id . "\" style=\"border:0; height: 450px; width: 100%;\" allowfullscreen=\"\" loading=\"lazy\" src=\"" . $url . "\">";
+    $str .= "your browser does not support iframes";
+    $str .= "</iframe>";
+    return $str;
 }
 
 function generateBasicMap($address) {
     $url = _genBasicMapUrl($address);
-    _generateMap($url);
+    return _generateMap($url);
 }
 
 function generateDirectionsMap($from, $to) {
     $url = _genDirectionsMapUrl($from, $to);
-    _generateMap($url);
+    return _generateMap($url);
 }
 
 function generateDynamicMap($to) {
@@ -53,7 +55,7 @@ function generateDynamicMap($to) {
         echo "<script src=\"/js/dynamicMap.js\"> </script>";
     }
     
-    _generateMap($url, "dynmapIframe");
+    return _generateMap($url, "dynmapIframe");
 }
 
 /*

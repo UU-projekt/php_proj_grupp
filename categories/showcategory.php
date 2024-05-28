@@ -8,9 +8,10 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Skapa annons</title>
             <link rel="stylesheet" href="../style.css">
+            <link rel="stylesheet" href="../css/index.css">
       </head>
 
-      <body>
+      <body class="inter-500">
             <div class="header">
                   <a href="../index.php">
                         <div id="logotext">
@@ -85,7 +86,7 @@
                         echo '<a href="../product-page.php?product_id=' . $product_id . '">
                         <div class="feed-box">' 
                         . '<div class="title-container">' 
-                             . $row['title'] 
+                             . "<h1>" . $row['title'] . "</h1>" 
                         . '</div> ' 
                         . '<div class="img-and-description-container">'
                               . '<div class="img-container"><img src="' . $product_img .'"></div>'

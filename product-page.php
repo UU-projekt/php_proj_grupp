@@ -8,10 +8,11 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Skapa annons</title>
             <link rel="stylesheet" href="style.css">
+            <link rel="stylesheet" href="css/index.css">
             <script src="js/script.js"></script>
       </head>
 
-      <body>
+      <body class="inter-500">
             <?php include "header.php"; ?>
 
             <div class="main">
@@ -24,7 +25,8 @@
 
                         $db = new SQLite3("db/database.db");
 
-                        $stmt = $db->prepare('SELECT * FROM ad 
+                        $stmt = $db->prepare('SELECT * FROM ad
+                                          JOIN location ON location.location_id = ad.location_id 
                                           WHERE ad_id = :product_id');
 
                         $stmt->bindValue(':product_id', $product_id, SQLITE3_INTEGER);
@@ -35,11 +37,14 @@
 
                               $product_id = $row['ad_id'];
                               $product_img = $row['img_url'];
+                              $map = generateDynamicMap($row["city"]);
 
                               echo '
                               <div id="product_container">
                                     <div class="img-container">
                                           <img src="' . $product_img . '">
+                                          ' . $map . '
+                                           
                                     </div>
                                     <div id="right-content">
                                           <h1> ' . $row['title'] . '</h1>
