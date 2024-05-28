@@ -34,8 +34,9 @@ if(!isset($_SESSION["user"]) || !in_array($_SESSION["user"]["role"], array("Sell
                               <input type="number" name="price" id="price" placeholder="$XXX"> <br>
 
                               <label for="beskrivning">Beskrivning:</label>
-                              <input type="text" name="description" id="beskrivning"
-                                    placeholder="Beskriv det som du vill sälja"><br>
+                              <textarea type="text" name="description" id="beskrivning"
+                                    placeholder="Beskriv det som du vill sälja"></textarea>
+                              <br>
 
                               <label for="category">Kategori:</label>
                               <select name="category" id="category">
@@ -49,7 +50,7 @@ if(!isset($_SESSION["user"]) || !in_array($_SESSION["user"]["role"], array("Sell
 
                               <label for="bild">Lägg till en bild:</label>
                               <input type="hidden" name="img_url" id="bild" />
-                              <iframe src="./uploadImage.php">
+                              <iframe src="uploadImage.php">
                                     iframe funkar inte. L
                               </iframe> </br>
 

@@ -14,7 +14,6 @@
         <img src="<?= $_GET["url"] ?>" />
     <?php else: ?>
     <div onclick="handleClick()" id="upload">
-        <?php include "./include/views/_info-box.php" ?>
         <?= getIconElement("upload") ?>
     </div>
     <form onchange="beforeSubmit()" method="POST" action="api/upload_image.php" enctype="multipart/form-data">
