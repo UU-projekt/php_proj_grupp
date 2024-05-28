@@ -4,6 +4,7 @@
     font-size: 1em;
     padding: 1em;
     transition: .4s;
+    display: block;
 }
 
 .btn-surface {

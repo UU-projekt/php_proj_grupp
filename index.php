@@ -1,4 +1,7 @@
-<?php include "./include/bootstrap.php" ?>
+<?php 
+include "./include/bootstrap.php";
+$new = getNewAds();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,41 +51,20 @@
         <div class="container">
             <h2>Nyheter!</h2>
             <div class="list">
-            <div class="list">
-                <div class="mini-annons">
-                    <div class="info">
-                        <a href="/annons">
-                    <div class="info">
-                        <a href="/annons">
-                            <h4>Subheading</h4>
-                            <p>
-                                <b>Test 10sek as USD: </b> <span> <?= convertCurrency(69.420, "THB") ?> </span>
-                            </p>
-                        </a>
+                <?php foreach($new as $n): ?>
+                    <a class="linkthing" href="product-page.php?product_id=<?= $n["ad_id"] ?>">
 
-                    </div>
-                    <div class="img"></div>
-                </div>
-
-
-                <div class="mini-annons">
-                    <div class="info">
-                        <a href="/annons">
-                    <div class="info">
-                        <a href="/annons">
-                            <h4>Subheading</h4>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            </p>
-                        </a>
-                    </div>
-                    <div class="img"></div>
-                        </a>
-                    </div>
-                    <div class="img"></div>
-                </div>
-            </div>
+                        <div class="mini-annons">
+                            <div style="background-image: url(<?= $n["img_url"] ?>)" class="img"></div>
+                            <div class="info">
+                                <h1><?= $n["title"] ?></h1>
+                                <p>
+                                    <?= $n["description"] ?>
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                <?php endforeach ?>
             </div>
         </div>
     </div>

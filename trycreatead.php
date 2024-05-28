@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       */
 
       $sql = "INSERT INTO ad (category_id, title, description, price, location_id, upload_date, img_url, user_id) 
-      VALUES (:category_id, :title, :description, :price, :location_id, :upload_date, :img_url, :user_id)";
+      VALUES (:category_id, :title, :description, :price, :location_id, :upload_date, :img_url, :user_id) RETURNING ad_id";
       $statement = $db->prepare($sql);
 
       $upload_date = date('Y-m-d H:i');
@@ -56,8 +56,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $statement->bindParam(":img_url", $_POST["img_url"]);
       $statement->bindParam(":user_id", $_SESSION["user"]["user_id"]);
 
-      if ($statement->execute()) {
-            echo 'HEJ HEJ HEJH JHJHJHHJHJHJHJHJHJJH';
+      if ($res = $statement->execute()) {
+            $skrt = $res->fetchArray(SQLITE3_ASSOC);
+            header("location: ./product-page.php?product_id=" . $skrt["ad_id"]);
             $db->close();
       }
 } else {
