@@ -46,7 +46,7 @@
         </p>
 
         <div class="container">
-            <h2>Dagens fynd!</h2>
+            <h2>Nyheter!</h2>
             <div class="list">
             <div class="list">
                 <div class="mini-annons">
