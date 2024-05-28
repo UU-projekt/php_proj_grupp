@@ -166,7 +166,6 @@ a {
 }
 
 .feed-box {
-      height: 20vh;
       border-radius: 10px;
       margin: auto;
       background-color: rgb(242 183 144 / 84%);
@@ -193,6 +192,10 @@ a {
 .img-container {
       width: 48%;
       padding: 2%;
+}
+
+.img-container>img {
+      width: 68%;
 }
 
 #right-content {

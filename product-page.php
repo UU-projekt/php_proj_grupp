@@ -8,6 +8,7 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Skapa annons</title>
             <link rel="stylesheet" href="style.css">
+            <script src="js/script.js"></script>
       </head>
 
       <body>
@@ -16,6 +17,8 @@
             <div class="main">
                   <div id="product-view-box">
                         <?php
+
+                        include "include/bootstrap.php";
 
                         $product_id = $_GET['product_id'];
 
@@ -40,8 +43,15 @@
                                     </div>
                                     <div id="right-content">
                                           <h1> ' . $row['title'] . '</h1>
-                                          <h3 id = "price-text">  Pris: ' . $row['price'] . '</h3>
-<select name="currency" id="currency-dropdown">
+                                          ';
+                                          if (isset($_GET['currency']))
+                                          {
+                                                echo '<h3 id="price-text">  Pris: ' . '<small>' . convertCurrency($row['price'], $_GET['currency']) .'</small>' . '</h3>';
+                                          }
+                                          else {
+                                                echo '<h3 id="price-text">  Pris: ' . '<small>' . convertCurrency($row['price'], "SEK") .'</small>' . '</h3>';
+                                          }
+                              echo '<select name="currency" id="currency-dropdown" onChange="UpdateCurrency()">
   <option value="SEK">SEK</option>
   <option value="USD">USD</option>
   <option value="EUR">EUR</option>
