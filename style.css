@@ -50,7 +50,11 @@ a {
       z-index: 2;
 }
 
-.menu-item:hover #categories-drop-down-menu>.drop-down-item {
+.menu-item:hover>#categories-drop-down-menu {
+      display: block;
+}
+
+.menu-item:hover>#categories-drop-down-menu>.drop-down-item {
       display: block;
 }
 
@@ -58,7 +62,6 @@ a {
       position: absolute;
       background-color: antiquewhite;
       padding: 0px;
-
 }
 
 .drop-down-item {
