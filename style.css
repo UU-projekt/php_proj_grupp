@@ -225,3 +225,8 @@ a {
 #product-view-box {
       padding: 1em;
 }
+
+#beskrivning {
+      height: 12%;
+      width: 100%;
+}
