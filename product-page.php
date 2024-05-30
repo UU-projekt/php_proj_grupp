@@ -38,7 +38,7 @@
 
                               $product_id = $row['ad_id'];
                               $product_img = $row['img_url'];
-                              $map = generateDynamicMap($row["city"]);
+                              $map = isset($row["city"]) ? generateDynamicMap($row["city"]) : "";
 
                               echo '
                               <div id="product_container">

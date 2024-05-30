@@ -18,21 +18,21 @@
                   $db = new SQLite3("db/database.db");
                   $searchinput = '%' . $_GET['searchinput'] . '%';
 
-                  $sql = 'SELECT * FROM ad JOIN category ON category.category_id = ad.category_id 
-                  WHERE (category_name LIKE "' 
-                  . $searchinput 
-                  . '" OR title + description LIKE "' . $searchinput  . '")';
+                  $sql = "SELECT * FROM ad JOIN category ON category.category_id = ad.category_id 
+                  WHERE category_name LIKE '%' || :query || '%' OR title LIKE '%' || :query || '%' OR description LIKE '%' || :query || '%'";
+                  $stmt = $db->prepare($sql);
+                  $stmt->bindParam(":query", $_GET["searchinput"]);
 
-                  $result = $db->query($sql);
+                  $result = $stmt->execute();
                   echo 'Sökresultat på ' . strip_tags($_GET['searchinput']) . ':<br>';
 
                   while ($row = $result->fetchArray()) {
-                        echo '<div class="productbox">';
+                        echo '<a href="product-page.php?product_id=' . $row["ad_id"] .  '"> <div class="productbox">';
                         echo 'Title: ' . $row['title'] . '<br>'
                               . 'Description: ' . $row['description'] . "<br>"
                               . 'Upload date: ' . $row['upload_date'];
 
-                        echo '</div>';
+                        echo '</div></a>';
                   }
                   $db->close();
                   ?>
